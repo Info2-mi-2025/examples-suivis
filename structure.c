@@ -45,21 +45,24 @@ void create_measure(Measure* m, int id, double value){
 
 // exemple sur les points
 typedef struct Point{
+    char name[10];
     int x;
     int y;
 } Point;
 
-Point create_point(int x, int y){
+Point create_point(char* name, int x, int y){
     Point p = {x, y};
+    strcpy(p.name, name);
     return p;
 }
 
 void print_point(Point* p){
-    printf("Point : (%d, %d)\n", p->x, p->y);
+    printf("Point : %s (%d, %d)\n", p->name, p->x, p->y);
 }
 
-Point add_point(Point* p1, Point* p2){
+Point add_point(Point* p1, Point* p2, char* name){
     Point p = {p1->x + p2->x, p1->y + p2->y};
+    strcpy(p.name, name);
     return p;
 }
 
@@ -84,9 +87,9 @@ int main()
 
 
     // Les points
-    Point p1 = create_point(1, 2);
-    Point p2 = create_point(3, 4);
-    Point p3 = add_point(&p1, &p2);
+    Point p1 = create_point("Point1", 1, 2);
+    Point p2 = create_point("Point2", 3, 4);
+    Point p3 = add_point(&p1, &p2, "Somme p1 p2");
     print_point(&p3);
     return 0;
 }

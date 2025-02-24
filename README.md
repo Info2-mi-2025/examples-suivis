@@ -16,6 +16,7 @@ Cours : [handout](https://heig-tin-info.github.io/handout/content/pointers.html?
 - `struct` est le mot clé pour définir une structure
 - `.` est l'opérateur pour accéder à un champ d'une structure
 - `->` est l'opérateur pour accéder à un champ d'une structure pointée
+- Pour comparer deux structures, il faut comparer chaque champ ou utiliser `memcmp`
 
 ```c
 typedef struct {

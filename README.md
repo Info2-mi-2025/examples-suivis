@@ -27,3 +27,18 @@ typedef struct {
 Point p = {.x = 1, .y = 2};
 p.x = 3;
 ```
+
+# Cours 26.02 - Lecture d'un fichiers textes
+[handout fichier](https://heig-tin-info.github.io/handout/content/files.html#)
+
+La manipulation de fichier se fera en utilisant un pointeur de type `FILE*` et les fonctions suivantes :
+
+- `fopen` ouvre un fichier
+  - `a` pour ajouter à la fin
+  - `r` pour lire
+  - `w` pour écrire
+- `fclose` ferme un fichier
+- `fgetc` lit un caractère
+- `fgets` lit une ligne et retourne un pointeur sur le buffer (ou NULL si fin de fichier)
+
+la fonction `fgets` lit une ligne, mais si la ligne est plus longue que le buffer, elle ne lit que le buffer et laisse le reste dans le fichier. La fonction ajoutera un `\0` à la fin du buffer.

@@ -1,0 +1,1 @@
+// gcc fichier_texte.c -o app && ./app

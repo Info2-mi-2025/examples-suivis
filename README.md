@@ -42,3 +42,7 @@ La manipulation de fichier se fera en utilisant un pointeur de type `FILE*` et l
 - `fgets` lit une ligne et retourne un pointeur sur le buffer (ou NULL si fin de fichier)
 
 la fonction `fgets` lit une ligne, mais si la ligne est plus longue que le buffer, elle ne lit que le buffer et laisse le reste dans le fichier. La fonction ajoutera un `\0` à la fin du buffer.
+
+# Cours 03.03 - Ecriture fichier texte
+- `fprintf` écrit dans un fichier
+- Pour écrire un entier dans un fichier : `fprintf(f, "%d", i);`

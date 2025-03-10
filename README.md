@@ -46,3 +46,33 @@ la fonction `fgets` lit une ligne, mais si la ligne est plus longue que le buffe
 # Cours 03.03 - Ecriture fichier texte
 - `fprintf` écrit dans un fichier
 - Pour écrire un entier dans un fichier : `fprintf(f, "%d", i);`
+
+# Cours 10.03 - Fichiers binaires
+- `fwrite` écrit dans un fichier binaire
+- `fread` lit dans un fichier binaire
+- `fseek` permet de se déplacer dans un fichier
+- `ftell` permet de connaître la position actuelle dans un fichier
+- `rewind` permet de revenir au début d'un fichier
+
+`fwrite` et `fread` prennent 4 arguments :
+- un pointeur sur le buffer
+- la taille d'un élément
+- le nombre d'éléments
+- le fichier
+- `fwrite(&i, sizeof(int), 1, f);`
+
+`fseek` prend 3 arguments :
+- le décalage
+- le point de départ
+  - SEEK_SET : début du fichier
+  - SEEK_CUR : position actuelle
+  - SEEK_END : fin du fichier
+- le fichier
+- `fseek(f, 0, SEEK_SET);`
+
+A faire :
+- fichier :
+Ecrire dans un fichier avec fwrite "Bonjour" pour que l'on puisse le lire avec un éditeur de texte
+
+- exercice 9 à 11 : https://github.com/tony-maulaz/info2-exercices/blob/main/fichier.md#ex-9
+- exercice meas : https://github.com/tony-maulaz/info2-exercices/blob/main/measure.md

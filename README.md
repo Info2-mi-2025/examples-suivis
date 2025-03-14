@@ -76,3 +76,29 @@ Ecrire dans un fichier avec fwrite "Bonjour" pour que l'on puisse le lire avec u
 
 - exercice 9 à 11 : https://github.com/tony-maulaz/info2-exercices/blob/main/fichier.md#ex-9
 - exercice meas : https://github.com/tony-maulaz/info2-exercices/blob/main/measure.md
+
+# Cours 17.03 - Allocation dynamique
+
+Lien vers le [handout](https://heig-tin-info.github.io/handout/content/memory-management.html?highlight=malloc#allocation-dynamique)
+
+Cyberlearn : [Allocation dynamique](https://cyberlearn.hes-so.ch/pluginfile.php/3363256/mod_resource/content/0/INFO2.03%20-%20lallocation%20dynamique.pdf)
+
+L'allocation dynamique permet de réserver de la mémoire à l'exécution. Cela permet de ne pas avoir à définir la taille d'un tableau à la compilation. La taille peut être définie à l'exécution et est exprimée en octets.
+
+>Pour rappel, il est possible de connaître la taille d'un type avec l'opérateur `sizeof`.
+
+- `malloc` alloue de la mémoire
+- `free` libère de la mémoire
+- `realloc` réalloue de la mémoire
+- `calloc` alloue de la mémoire et initialise à 0
+
+`malloc` prend en argument la taille en octets et retourne un pointeur sur la mémoire allouée. Si la mémoire n'est pas allouée, la fonction retourne `NULL`.
+
+`free` prend en argument un pointeur sur la mémoire à libérer.
+
+Exemple pour un tableau de 10 entiers :
+```c
+int *tab = malloc(10 * sizeof(int));
+tab[0] = 42;
+free(p);
+```

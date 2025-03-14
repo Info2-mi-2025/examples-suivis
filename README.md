@@ -102,3 +102,20 @@ int *tab = malloc(10 * sizeof(int));
 tab[0] = 42;
 free(p);
 ```
+
+### Réallocation de mémoire
+`realloc` permet de réallouer de la mémoire. 
+
+- Elle prend en argument un pointeur sur la mémoire à réallouer et la nouvelle taille en octets. 
+- Si la mémoire n'est pas allouée, la fonction retourne `NULL`.
+- Si la réallocation échoue, la mémoire originale est conservée.
+- Si la réallocation réussit, la mémoire originale est libérée et la fonction retourne un pointeur sur la nouvelle mémoire allouée.
+
+Exemple pour un tableau de 10 entiers :
+```c
+int *tab = malloc(10 * sizeof(int));
+tab = realloc(tab, 20 * sizeof(int));
+```
+
+### Exercices
+- [Exercices allocation dynamique](https://github.com/tony-maulaz/info2-exercices/blob/main/allocation.md)

@@ -57,5 +57,15 @@ int main(int argc, char *argv[])
 
     printf("\nid : %d   -  val : %lf", mr.id, mr.value);
 
+
+    // Premier exercice
+    f = fopen("fichier_ex1", "w");
+    if( f == NULL )
+        return ERROR_FILE;
+    char* txt_ex1 = "Bonjour\n";
+    fwrite(txt_ex1, sizeof(char), strlen(txt_ex1), f);
+    fwrite(txt_ex1, sizeof(char), sizeof(txt_ex1), f); // écrit la sentinelle dans le fichier
+    fclose(f);
+
     return 0;
 }

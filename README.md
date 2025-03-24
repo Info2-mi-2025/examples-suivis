@@ -127,3 +127,6 @@ Lien vers le [handout](https://heig-tin-info.github.io/handout/content/data-stru
 
 Exercice : [tableaux dynamique](https://github.com/tony-maulaz/info2-exercices/blob/main/td_allocation.md)
 
+## Suppression de valeur
+Dans un tableau dynamique, supprimer une valeur ne signifie pas que la donnée est physiquement retirée de la mémoire. En réalité, on se contente de diminuer le compteur d'éléments (par exemple, une variable taille ou count). Ainsi, la mémoire occupée par l’élément supprimé reste allouée. Si un nouvel élément est ajouté par la suite, il viendra généralement écraser la dernière valeur considérée comme supprimée.
+Il est donc important de noter que la taille allouée en mémoire du tableau ne change pas lors d'une suppression. Seul le nombre logique d’éléments est mis à jour.

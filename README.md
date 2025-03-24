@@ -119,3 +119,11 @@ tab = realloc(tab, 20 * sizeof(int));
 
 ### Exercices
 - [Exercices allocation dynamique](https://github.com/tony-maulaz/info2-exercices/blob/main/allocation.md)
+
+
+# Cours 21.02 - Tableaux dynamiques
+
+Lien vers le [handout](https://heig-tin-info.github.io/handout/content/data-structures.html#tableau-dynamique)
+
+Exercice : [tableaux dynamique](https://github.com/tony-maulaz/info2-exercices/blob/main/td_allocation.md)
+

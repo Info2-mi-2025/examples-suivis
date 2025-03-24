@@ -25,6 +25,8 @@ int main(){
     // pour ne pas perdre l'adresse de la première allocation en cas d'erreur
     double* tmp = realloc(tab, sizeof(double) * size * GROWTH_FACTOR); // on augmente la taille du tableau
     if( tmp == NULL){
+        // tmp == NULL
+        // backup de tab 
         printf("Erreur d'allocation mémoire\n");
         return 1;
     }
@@ -32,6 +34,11 @@ int main(){
     tab = tmp;
     tmp = NULL;
 
+    // utilisation du tableau
+    tab[10] = 3.4;
+    tab[0] = 4.5;
+
+    // fin du programme
     free(tab); // on libère la mémoire
     tab = NULL;
 

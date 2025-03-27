@@ -125,7 +125,12 @@ tab = realloc(tab, 20 * sizeof(int));
 
 Lien vers le [handout](https://heig-tin-info.github.io/handout/content/data-structures.html#tableau-dynamique)
 
-Exercice : [tableaux dynamique](https://github.com/tony-maulaz/info2-exercices/blob/main/td_allocation.md)
+Exercice : 
+- [tableaux dynamique](https://github.com/tony-maulaz/info2-exercices/blob/main/td_allocation.md)
+- [tableaux dynamique supl](https://github.com/tony-maulaz/info2-exercices/blob/main/allocation_dynamique.md)
+- [tableaux dynamique binaire](https://github.com/tony-maulaz/info2-exercices/blob/main/allocation_binaire.md)
+
+
 
 ## Suppression de valeur
 Dans un tableau dynamique, supprimer une valeur ne signifie pas que la donnée est physiquement retirée de la mémoire. En réalité, on se contente de diminuer le compteur d'éléments (par exemple, une variable taille ou count). Ainsi, la mémoire occupée par l’élément supprimé reste allouée. Si un nouvel élément est ajouté par la suite, il viendra généralement écraser la dernière valeur considérée comme supprimée.

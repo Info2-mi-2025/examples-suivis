@@ -103,6 +103,11 @@ tab[0] = 42;
 free(p);
 ```
 
+## Important
+- Il n'est pas possible de récupérer la taille d'une zone mémoire allouée dynamiquement.
+- Il n'est pas possible d'utiliser sizeof sur une zone mémoire allouée dynamiquement (comme avec malloc).
+- Si l'adresse d'une zone allouée est perdue (c’est-à-dire si le pointeur est écrasé ou oublié), il est impossible de la retrouver.
+
 ### Réallocation de mémoire
 `realloc` permet de réallouer de la mémoire. 
 

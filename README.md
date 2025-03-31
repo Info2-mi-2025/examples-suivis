@@ -130,6 +130,9 @@ tab = realloc(tab, 20 * sizeof(int));
 
 Lien vers le [handout](https://heig-tin-info.github.io/handout/content/data-structures.html#tableau-dynamique)
 
+Lien vers le [slides](https://cyberlearn.hes-so.ch/pluginfile.php/3400672/mod_resource/content/0/allocation-dynamique.pdf)
+
+
 Exercice : 
 - [tableaux dynamique](https://github.com/tony-maulaz/info2-exercices/blob/main/td_allocation.md)
 - [tableaux dynamique supl](https://github.com/tony-maulaz/info2-exercices/blob/main/allocation_dynamique.md)
@@ -140,3 +143,12 @@ Exercice :
 ## Suppression de valeur
 Dans un tableau dynamique, supprimer une valeur ne signifie pas que la donnée est physiquement retirée de la mémoire. En réalité, on se contente de diminuer le compteur d'éléments (par exemple, une variable taille ou count). Ainsi, la mémoire occupée par l’élément supprimé reste allouée. Si un nouvel élément est ajouté par la suite, il viendra généralement écraser la dernière valeur considérée comme supprimée.
 Il est donc important de noter que la taille allouée en mémoire du tableau ne change pas lors d'une suppression. Seul le nombre logique d’éléments est mis à jour.
+
+# Cours 31.03 - Les listes chaînées
+
+Lien vers le [handout](https://heig-tin-info.github.io/handout/content/data-structures.html#listes-chainees)
+
+Lien vers le [slides](https://cyberlearn.hes-so.ch/pluginfile.php/3400675/mod_resource/content/0/liste-chain%C3%A9e.pdf)
+
+Lien vers [developpez.com](https://chgi.developpez.com/liste/)
+

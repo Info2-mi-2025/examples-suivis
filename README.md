@@ -162,6 +162,8 @@ Important :
 - Le dernier nœud de la liste pointe vers NULL.
 - La liste chaînée est dynamique, ce qui signifie que la taille de la liste peut changer à tout moment.
 - La liste chaînée est plus flexible qu'un tableau, car elle permet d'ajouter et de supprimer des éléments facilement.
+- Pour insérer ou supprimer un élément dans une liste chaînée, il faut modifier les pointeurs des nœuds.
+- Pour parcourir une liste chaînée, il faut utiliser une boucle et un pointeur temporaire `Node* current`.
 
 Exercices :
 - [Liste personne](https://github.com/tony-maulaz/info2-exercices/blob/main/liste_personne.md)

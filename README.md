@@ -146,9 +146,23 @@ Il est donc important de noter que la taille allouée en mémoire du tableau ne 
 
 # Cours 31.03 - Les listes chaînées
 
+L'example d'implémentation d'une liste chaînée est dans le fichier `list.c`
+
 Lien vers le [handout](https://heig-tin-info.github.io/handout/content/data-structures.html#listes-chainees)
 
 Lien vers le [slides](https://cyberlearn.hes-so.ch/pluginfile.php/3400675/mod_resource/content/0/liste-chain%C3%A9e.pdf)
 
 Lien vers [developpez.com](https://chgi.developpez.com/liste/)
+
+Important : 
+- Une liste chaînée est une structure de données qui permet de stocker des éléments de manière dynamique.
+- Chaque élément de la liste est appelé un nœud.
+- Chaque nœud est créé dynamiquement avec `malloc`.
+- Chaque nœud contient une valeur et un pointeur vers le nœud suivant.
+- Le dernier nœud de la liste pointe vers NULL.
+- La liste chaînée est dynamique, ce qui signifie que la taille de la liste peut changer à tout moment.
+- La liste chaînée est plus flexible qu'un tableau, car elle permet d'ajouter et de supprimer des éléments facilement.
+
+Exercices :
+- [Liste personne](https://github.com/tony-maulaz/info2-exercices/blob/main/liste_personne.md)
 

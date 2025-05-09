@@ -62,7 +62,7 @@ int find_point(List* l, Point* p){
 
 Node* find_add_point(List* l, Point* p){
     if( l == NULL || p == NULL)
-        return -1;
+        return NULL;
 
     Node* current = l->head;
 
@@ -126,12 +126,101 @@ bool insert_end(List* l, int x, int y, int z){
     return true;
 } 
 
-bool insert_after(List* l, Point* p){
+bool insert_after(List* l, Point* p, int x, int y, int z){
+    Node* n = create_node(x,y,z);
+    if( n == NULL ) return false;
+
     Node* current = find_add_point(l, p);
     if(current == NULL)
         return false;
 
+    n->prev = current;
+    n->next = current->next;
+
+    // test si dernier
+    if( current->next == NULL ){
+        l->tail = n;
+    }
+    else{
+        current->next->prev = n;
+    }
+
+    current->next = n;
+}
+
+bool insert_before(List* l, Point* p, int x, int y, int z){
+    Node* n = create_node(x,y,z);
+    if( n == NULL ) return false;
+
+    Node* current = find_add_point(l, p);
+    if(current == NULL)
+        return false;
+
+    n->next = current;
+    n->prev = current->prev;
+
+    // test si premier
+    if( current->prev == NULL ){
+        l->head = n;
+    }
+    else{
+        current->prev->next = n;
+    }
+
+    current->prev = n;
+}
+
+bool remove_point(List* l, Point* p){
+    Node* to_del = find_add_point(l, p);
+    if(to_del == NULL)
+        return false;
+
+    bool midlle = true;
+
+    // si premier
+    if(to_del == l->head){
+        l->head = to_del->next;
+        to_del->next->prev = NULL;
+        midlle = false;
+    }
+    // si dernier
+    // on ne peut pas utiliser de else if car un élément peut être premier et dernier
+    if(to_del == l->tail){
+        l->tail = to_del->prev;
+        to_del->prev->next = NULL;
+        midlle = false;
+    }
     
+    if(midlle){
+        to_del->prev->next = to_del->next;
+        to_del->next->prev = to_del->prev;
+    }
+
+    free(to_del);
+}
+
+bool remove_first(List* l){
+    remove_point(l, &l->head->p);
+}
+
+bool remove_last(List* l){
+    // on ne peut pas utiliser remove_point car il peut y avoir un point identique avant
+    if( l->tail == NULL ){
+        return false;
+    }
+
+    Node* to_del = l->tail;
+
+    // si aussi premier
+    if( l->head == l->tail ){
+        l->head = NULL;
+    }
+    else{
+        l->tail->prev->next = NULL;
+    }
+    
+    l->tail = to_del->prev; // si c'est le premier, sera NULL
+    free(to_del);
 }
 
 int main(){
@@ -150,5 +239,39 @@ int main(){
     insert_end(&maList, 30,-1,-2);
     insert_end(&maList, 10,-1,-2);
     print_list(&maList);
+
+    printf("\nInsert after\n");
+    Point p = {.x=10, .y=20, .z=30};
+    insert_after(&maList, &p, -1,-2,-3);
+    print_list(&maList);
+    printf("   reverse\n");
+    print_reverse(&maList);
+
+    printf("\nInsert before\n");
+    insert_before(&maList, &p, -10,-20,-30);
+    insert_before(&maList, &p, -100,-200,-300);
+    print_list(&maList);
+    
+    printf("\nDelete\n");
+    Point p1 = {.x=-10, .y=-20, .z=-30};
+    remove_point(&maList, &p1);
+    Point p2 = {.x=-1, .y=-2, .z=-3};
+    remove_point(&maList, &p2);
+    Point p3 = {.x=10, .y=-1, .z=-2};
+    remove_point(&maList, &p3);
+    print_list(&maList);
+
+    printf("\nDelete first\n");
+    remove_first(&maList);
+    print_list(&maList);
+
+    printf("\nDelete last\n");
+    remove_last(&maList);
+    print_list(&maList);
+
+    while(remove_last(&maList)){
+        printf("\nDelete last\n");
+        print_list(&maList);
+    }
     return 0;
 }

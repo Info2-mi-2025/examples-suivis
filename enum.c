@@ -1,8 +1,9 @@
 #include <stdio.h>
 
+
 typedef enum {LUNDI, MARDI, MERCREDI, JEUDI, VENDREDI, SAMEDI, DIMANCHE} Jour;
 
-void print_jour(Jour j){
+void print_jour(Jour j){ // paramètre de type Jour
     switch (j) {
         case LUNDI: printf("Lundi\n"); break;
         case MARDI: printf("Mardi\n"); break;

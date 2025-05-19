@@ -30,7 +30,7 @@ void print_array(PointArray* pa){
         return;
 
     for(size_t n=0; n < pa->nbr_element; n++){
-        printf("Point %d : x=%d  y=%d\n", 
+        printf("Point %ld : x=%d  y=%d\n", 
             n, pa->array[n].x, pa->array[n].y);
     }
 }
@@ -52,6 +52,7 @@ bool insert_first(PointArray* pa, int x, int y){
 
     pa->array[0].x = x;
     pa->array[0].y = y;
+    pa->nbr_element++;
 }
 
 Point remove_first(PointArray* pa){
@@ -59,19 +60,16 @@ Point remove_first(PointArray* pa){
         exit(1);
 
     // controle de la capacité (min un point)
-    if( pa->nbr_element >= 1){
+    if( pa->nbr_element <= 1){
         printf("Le tableau est vide\n");
         exit(1);
     }
         
     // décalage du tableau
-    for(size_t k=pa->nbr_element; k>0; k--){
-        pa->array[k] = pa->array[k-1];
+    for(size_t k=0; k<pa->nbr_element-1; k++){
+        pa->array[k] = pa->array[k+1];
     }
 
-    Point p = pa->array[0];
-
-    pa->array[0].x = x;
-    pa->array[0].y = y;
+    pa->nbr_element--;
 }
 

@@ -170,3 +170,62 @@ Important :
 Exercices :
 - [Liste personne](https://github.com/tony-maulaz/info2-exercices/blob/main/liste_personne.md)
 - [Liste de points 3D](https://github.com/tony-maulaz/info2-exercices/blob/main/liste-points.md)
+
+# Cours 19.05 - Préprocesseur et enum
+## Enumérations:
+Les énumérations sont un moyen de définir des types de données personnalisés en C. Elles permettent de donner des noms significatifs à des valeurs entières, ce qui rend le code plus lisible et maintenable.
+
+Exemple d'énumération :
+```c
+typedef enum {
+    RED,
+    GREEN,
+    BLUE
+} Color;
+
+Color c = RED;
+```
+
+Dans cet exemple, `Color` est un type énuméré qui peut prendre les valeurs `RED`, `GREEN` ou `BLUE`. Les valeurs sont automatiquement assignées à des entiers, en commençant par 0 pour `RED`, 1 pour `GREEN` et 2 pour `BLUE`.
+Il est possible de spécifier des valeurs spécifiques pour les énumérations :
+```c
+typedef enum {
+    RED = 1,
+    GREEN = 2,
+    BLUE = 4
+} Color;
+Color c = GREEN;
+```
+
+## Préprocesseur:
+Le préprocesseur est un outil qui permet de manipuler le code source avant la compilation. Il est utilisé pour inclure des fichiers, définir des macros et conditionner le code.
+
+Les instructions de base sont :
+- `#include` : inclut un fichier source ou une bibliothèque
+
+- `#define` : définit une macro
+- `#ifdef` : conditionne le code en fonction de la définition d'une macro
+
+- `#if` : conditionne le code en fonction d'une expression
+- `#else` : alternative à une condition
+
+- `#endif` : termine une condition
+
+Par exemple pour ne pas inclure une partie de code si une macro est définie :
+```c
+#ifdef DEBUG
+    printf("Debug mode\n");
+#endif
+```
+
+Cyberlearn : 
+- [enum](https://cyberlearn.hes-so.ch/pluginfile.php/3491031/mod_resource/content/0/INFO2.06%20-%20Compl%C3%A9ments%20sur%20les%20types%20de%20donn%C3%A9es%20%28enum-union-bits%29.pdf)
+- [preproc](https://cyberlearn.hes-so.ch/pluginfile.php/3491034/mod_resource/content/0/INFO2.04%20-%20Le%20pr%C3%A9processeur.pdf)
+
+Handout : 
+- [enum](https://heig-tin-info.github.io/handout/content/datatype.html?highlight=enum#enumerations)
+- [prépro](https://heig-tin-info.github.io/handout/content/preprocessor.html?highlight=pr%C3%A9proc)
+
+
+Exercices : 1 à 4
+https://github.com/tony-maulaz/info2-exercices/blob/main/preproc.md

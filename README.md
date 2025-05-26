@@ -229,3 +229,6 @@ Handout :
 
 Exercices : 1 à 4
 https://github.com/tony-maulaz/info2-exercices/blob/main/preproc.md
+
+# Cours 26.05 - Exercice allocation Forme
+Ex : [lien](https://github.com/tony-maulaz/info2-exercices/blob/main/fichier_struct_enum.md)
